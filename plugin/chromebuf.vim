@@ -25,7 +25,7 @@ function! s:BufJump(index)
           let selectedbufnr = bufnr(buflist[currbufnr - 1])
           break
         endif
-        let currbufnr = currbufnr + 1
+        let currbufnr += 1
       endwhile
     endif
     execute ':b '. selectedbufnr
@@ -34,27 +34,14 @@ endfunction
 
 com! -narg=1 BufJump :call s:BufJump(<f-args>)
 
+" map <c-#> or <d-#> from 1 to 9
 if g:chromebuf_default_mappings
-  if has('mac')
-    nmap <d-1> :call <SID>BufJump(1)<cr>
-    nmap <d-2> :call <SID>BufJump(2)<cr>
-    nmap <d-3> :call <SID>BufJump(3)<cr>
-    nmap <d-4> :call <SID>BufJump(4)<cr>
-    nmap <d-5> :call <SID>BufJump(5)<cr>
-    nmap <d-6> :call <SID>BufJump(6)<cr>
-    nmap <d-7> :call <SID>BufJump(7)<cr>
-    nmap <d-8> :call <SID>BufJump(8)<cr>
-    nmap <d-9> :call <SID>BufJump(9)<cr>
-  else
-    nmap <c-1> :call <SID>BufJump(1)<cr>
-    nmap <c-2> :call <SID>BufJump(2)<cr>
-    nmap <c-3> :call <SID>BufJump(3)<cr>
-    nmap <c-4> :call <SID>BufJump(4)<cr>
-    nmap <c-5> :call <SID>BufJump(5)<cr>
-    nmap <c-6> :call <SID>BufJump(6)<cr>
-    nmap <c-7> :call <SID>BufJump(7)<cr>
-    nmap <c-8> :call <SID>BufJump(8)<cr>
-    nmap <c-9> :call <SID>BufJump(9)<cr>
+  let k = has('mac') ? 'd' : 'c'
+  let n = 1
+  while n <= 9
+    exe 'nn <'.k.'-'.n.'> :call <sid>BufJump('.n.')<cr>'
+    let n += 1
+  endwhile
 endif
 
 let &cpo = s:save_cpo
