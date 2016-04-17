@@ -25,7 +25,7 @@ $ git pull
 
 ### Options
 
-Default mappings are <c-#> on Windows and <d-#> on OSX
+Default mappings are `<d-#>` on OSX and `<c-#>` on other OSs
 
 Define your own mappings
 
