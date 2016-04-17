@@ -1,6 +1,6 @@
 # chromebuf
 
-> chromebuf lets you jump bewteen buffers like chrome does with tabs cmd+# or ctrl+# in windows
+> chromebuf lets you jump bewteen buffers like chrome does with tabs cmd+# on OSX or ctrl+# on others
 
 ## Installation
 
