@@ -5,7 +5,7 @@
 ## Installation
 
 ### Vundle
-1. in your vimrc: `Bundle 'dciccale/guizoom.vim'`
+1. in your vimrc: `Bundle 'dciccale/vim-chromebuf.git'`
 2. run `:BundleInstall` in vim
 3. for updating the plugin run `:BundleUpdate` in vim
 
